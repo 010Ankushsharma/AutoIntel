@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Model - AutoIntel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <span class="logo-text">AutoIntel</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('index') }}#predict-section">Predict Price</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About Model</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="about-section">
+            <div class="section-header">
+                <h1 class="section-title">
+                    <span class="icon">🤖</span> About Our AI Model
+                </h1>
+                <p class="section-subtitle">Advanced machine learning for accurate car price predictions</p>
+            </div>
+
+            <!-- Model Performance Stats -->
+            {% if model_info %}
+            <div class="model-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-label">Model Type</div>
+                    <div class="stat-value">{{ model_info.model_name }}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <div class="stat-label">R² Score (Accuracy)</div>
+                    <div class="stat-value highlight">{{ "{:.2%}".format(model_info.r2_score) }}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-label">Mean Absolute Error</div>
+                    <div class="stat-value">₹{{ "{:,.0f}".format(model_info.mae) }}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-label">Features Analyzed</div>
+                    <div class="stat-value">{{ model_info.feature_count }}</div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- How It Works -->
+            <div class="how-it-works">
+                <h2 class="section-title center">
+                    <span class="icon">⚙️</span> How It Works
+                </h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">📥</div>
+                        <h3>Data Collection</h3>
+                        <p>We analyze over 80,000 real car transactions from verified sources across India</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">🧹</div>
+                        <h3>Data Cleaning</h3>
+                        <p>Remove inconsistencies, handle missing values, and standardize measurements</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">🔬</div>
+                        <h3>Feature Engineering</h3>
+                        <p>Extract meaningful features like brand, engine capacity, fuel efficiency, and more</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">🎓</div>
+                        <h3>Model Training</h3>
+                        <p>Train multiple ML algorithms including Linear Regression, Random Forest, and Gradient Boosting</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">🏆</div>
+                        <h3>Model Selection</h3>
+                        <p>Select the best-performing model based on R² score, MAE, and RMSE metrics</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">💡</div>
+                        <h3>Prediction</h3>
+                        <p>Provide instant, accurate valuations based on your car's specifications</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="technology-section">
+                <h2 class="section-title center">
+                    <span class="icon">🛠️</span> Technology Stack
+                </h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>Core programming language for data processing and ML</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📊</div>
+                        <h3>Pandas & NumPy</h3>
+                        <p>Data manipulation and numerical computing</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🤖</div>
+                        <h3>Scikit-Learn</h3>
+                        <p>Machine learning algorithms and evaluation metrics</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🌐</div>
+                        <h3>Flask</h3>
+                        <p>Web framework for the prediction interface</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">💾</div>
+                        <h3>Joblib</h3>
+                        <p>Model serialization and persistence</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎨</div>
+                        <h3>HTML/CSS/JS</h3>
+                        <p>Modern, responsive user interface</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Models Compared -->
+            <div class="comparison-section">
+                <h2 class="section-title center">
+                    <span class="icon">📊</span> Models We Evaluated
+                </h2>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Description</th>
+                                <th>Strengths</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Linear Regression</strong></td>
+                                <td>Statistical approach using linear relationships</td>
+                                <td>Simple, interpretable, fast training</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Random Forest</strong></td>
+                                <td>Ensemble of decision trees</td>
+                                <td>Handles non-linearity, robust to outliers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gradient Boosting</strong></td>
+                                <td>Sequential tree building with error correction</td>
+                                <td>High accuracy, handles complex patterns ⭐ Best Performer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="features-detailed">
+                <h2 class="section-title center">
+                    <span class="icon">🎯</span> Features We Analyze
+                </h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Brand & Manufacturer</strong>
+                            <p>Market reputation, reliability ratings, and brand value depreciation</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Manufacturing Year</strong>
+                            <p>Age-based depreciation calculation using industry-standard curves</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Kilometers Driven</strong>
+                            <p>Wear and tear estimation based on usage intensity</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Fuel Type</strong>
+                            <p>Market demand variations for Petrol, Diesel, CNG, Electric, and LPG vehicles</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Transmission Type</strong>
+                            <p>Manual vs Automatic preference and pricing differences</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Engine Capacity</strong>
+                            <p>Power and performance characteristics affecting resale value</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Mileage Efficiency</strong>
+                            <p>Fuel economy impact on market demand and pricing</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Max Power Output</strong>
+                            <p>Performance metrics influencing buyer preferences</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Ownership History</strong>
+                            <p>First-owner premium vs multiple-owner depreciation</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Seller Type</strong>
+                            <p>Individual vs Dealer pricing dynamics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Get Your Car's Valuation?</h2>
+                <p>Use our AI-powered tool to get an instant, accurate price prediction</p>
+                <a href="{{ url_for('index') }}#predict-section" class="btn-primary btn-large">
+                    <span class="btn-icon">🚀</span> Start Prediction Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AutoIntel</h4>
+                    <p>AI-powered car price prediction platform helping buyers and sellers make informed decisions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('index') }}#predict-section">Predict Price</a></li>
+                        <li><a href="{{ url_for('about') }}">About Model</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <p>Built with Python, Machine Learning, and Flask</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoIntel. All rights reserved. | Powered by Machine Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

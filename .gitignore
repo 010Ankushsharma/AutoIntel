@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model Files (Optional - you can choose to commit these or generate on deploy)
+# model/*.pkl
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+.flaskenv
+
+# Database
+*.db
+*.sqlite
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# pyenv
+.python-version
+
+# Large files / Data
+data/*.csv
+*.arff
+*.h5
+*.netcdf
+
+# Documentation builds
+docs/_build/
+
+# Premium theme guide (optional)
+PREMIUM_THEME_GUIDE.md
+THEME_SUMMARY.md
