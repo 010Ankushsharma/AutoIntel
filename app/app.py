@@ -89,7 +89,7 @@ def predict():
         if model is None or feature_columns is None:
             error_message = "Model not loaded. Please restart the server."
             print(error_message)
-            return render_template('index.html', error=error_message)
+            return render_template('index-premium.html', error=error_message)
         
         # Get form data
         year = int(request.form.get('year', 2020))
