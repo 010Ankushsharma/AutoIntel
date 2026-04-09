@@ -11,7 +11,7 @@ A production-ready machine learning web application that predicts car resale val
 
 ![AutoIntel Preview](preview.png)
 
-**Live Demo**: [Coming Soon](#)
+**Live Demo**:https://autointel.onrender.com
 
 ---
 
